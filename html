@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.body {
+    width: 100%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 13px;
+    color: #4B609B;
+    background-color: #EDF1FF;
+}
+a:link {
+    color: #879CD9;
+    text-decoration: none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+a:visited {
+    color: #3654AB;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+a:hover {
+    color: #BBC5E2;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+a:active {
+    color: #FFFFFF;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+.head {
+    z-index: +8;
+}
+.title {
+    position: fixed;
+    top: 76px;
+    left: 260px;
+    color: #4B609B;
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 0;
+}
+.side {
+    position: fixed;
+    width: 150px;
+    height: 100%;
+    background-color: #14192A;
+    left: 0px;
+    top: 0px;
+    z-index: +1;
+}
+.backhead {
+    position: fixed;
+    left: 52px;
+    top: 12px;
+    width: 196px;
+    height: 196px;
+    z-index: +1;
+    background-color: #14192A;
+    border-radius: 100px;
+}
+.headpokeball {
+    position: fixed;
+    left: 50px;
+    top: 10px;
+    z-index: +9;
+}
+.back1{
+    position: fixed;
+    left: 150px;
+    top: 227px;
+    width: 33px;
+    height: 36px;
+    z-index: +1;
+    background-color: #14192A;
+    border-radius: 0px 15px 15px 0px;
+}
+.pokeball1 {
+    position: fixed;
+    left: 150px;
+    top: 230px;
+    z-index: +8;
+    transform: rotate(0deg);
+    -webkit-transition: transform .2s linear 0s;
+    -moz-transition: transform .2s linear 0s;
+    -o-transition: transform .2s linear 0s;
+}
+.pokeball1:hover {
+    transform: rotate(360deg);
+    -webkit-transition: transform 1s linear 0s;
+    -moz-transition: transform 1s linear 0s;
+    -o-transition: transform 1s linear 0s;
+}
+.menuback1 {
+    position: fixed;
+    left: 151px;
+    top: 231px;
+    width: 28px;
+    height: 28px;
+    z-index: +6;
+    opacity: 0;
+    background-color: #EDF1FF;
+    border-radius: 30px 30px 30px 30px;
+    -webkit-transition: opacity 0s linear .2s;
+    -moz-transition: opacity 0s linear .2s;
+    -o-transition: opacity 0s linear .2s;
+}
+.pokeball1:hover ~ .menuback1 {
+    opacity: 1;
+    -webkit-transition: opacity 0s linear 0s;
+    -moz-transition: opacity 0s linear 0s;
+    -o-transition: opacity 0s linear 0s;
+}
+.menu1 {
+    position: fixed;
+    left: 165px;
+    top: 231px;
+    width: 0px;
+    height: 28px;
+    z-index: +7;
+    background-color: #EDF1FF;
+    border-radius: 15px 0px 0px 80px;
+    -webkit-transition: width .2s linear 0s, left .2s linear 0s;
+    -moz-transition: width .2s linear 0s, left .2s linear 0s;
+    -o-transition: width .2s linear 0s, left .2s linear 0s;
+}
+.pokeball1:hover ~ .menu1 .menutext {
+    opacity: 1;
+    -webkit-transition: opacity .1s linear .5s;
+    -moz-transition: opacity .1s linear .5s;
+    -o-transition: opacity .1s linear .5s;
+}
+.pokeball1:hover ~ .menu1 {
+    left: 50px;
+    width: 115px;
+    -webkit-transition: width 1s linear 0s, left 1s linear 0s;
+    -moz-transition: width 1s linear 0s, left 1s linear 0s;
+    -o-transition: width 1s linear 0s, left 1s linear 0s;
+}
+.back2{
+    position: fixed;
+    left: 150px;
+    top: 277px;
+    width: 33px;
+    height: 36px;
+    z-index: +1;
+    background-color: #14192A;
+    border-radius: 0px 15px 15px 0px;
+}
+.pokeball2 {
+    position: fixed;
+    left: 150px;
+    top: 280px;
+    z-index: +8;
+    transform: rotate(0deg);
+    -webkit-transition: transform .2s linear 0s;
+    -moz-transition: transform .2s linear 0s;
+    -o-transition: transform .2s linear 0s;
+}
+.pokeball2:hover {
+    transform: rotate(360deg);
+    -webkit-transition: transform 1s linear 0s;
+    -moz-transition: transform 1s linear 0s;
+    -o-transition: transform 1s linear 0s;
+}
+.menuback2 {
+    position: fixed;
+    left: 151px;
+    top: 281px;
+    width: 28px;
+    height: 28px;
+    z-index: +6;
+    opacity: 0;
+    background-color: #EDF1FF;
+    border-radius: 30px 30px 30px 30px;
+    -webkit-transition: opacity 0s linear .2s;
+    -moz-transition: opacity 0s linear .2s;
+    -o-transition: opacity 0s linear .2s;
+}
+.pokeball2:hover ~ .menuback2 {
+    opacity: 1;
+    -webkit-transition: opacity 0s linear 0s;
+    -moz-transition: opacity 0s linear 0s;
+    -o-transition: opacity 0s linear 0s;
+}
+.menu2 {
+    position: fixed;
+    left: 165px;
+    top: 281px;
+    width: 0px;
+    height: 28px;
+    z-index: +7;
+    background-color: #EDF1FF;
+    border-radius: 15px 0px 0px 80px;
+    -webkit-transition: width .2s linear 0s, left .2s linear 0s;
+    -moz-transition: width .2s linear 0s, left .2s linear 0s;
+    -o-transition: width .2s linear 0s, left .2s linear 0s;
+}
+.pokeball2:hover ~ .menu2 .menutext {
+    opacity: 1;
+    -webkit-transition: opacity .1s linear .5s;
+    -moz-transition: opacity .1s linear .5s;
+    -o-transition: opacity .1s linear .5s;
+}
+.pokeball2:hover ~ .menu2 {
+    left: 50px;
+    width: 115px;
+    -webkit-transition: width 1s linear 0s, left 1s linear 0s;
+    -moz-transition: width 1s linear 0s, left 1s linear 0s;
+    -o-transition: width 1s linear 0s, left 1s linear 0s;
+}
+.back3{
+    position: fixed;
+    left: 150px;
+    top: 327px;
+    width: 33px;
+    height: 36px;
+    z-index: +1;
+    background-color: #14192A;
+    border-radius: 0px 15px 15px 0px;
+}
+.pokeball3 {
+    position: fixed;
+    left: 150px;
+    top: 330px;
+    z-index: +8;
+    transform: rotate(0deg);
+    -webkit-transition: transform .2s linear 0s;
+    -moz-transition: transform .2s linear 0s;
+    -o-transition: transform .2s linear 0s;
+}
+.pokeball3:hover {
+    transform: rotate(360deg);
+    -webkit-transition: transform 1s linear 0s;
+    -moz-transition: transform 1s linear 0s;
+    -o-transition: transform 1s linear 0s;
+}
+.menuback3 {
+    position: fixed;
+    left: 151px;
+    top: 331px;
+    width: 28px;
+    height: 28px;
+    z-index: +6;
+    opacity: 0;
+    background-color: #EDF1FF;
+    border-radius: 30px 30px 30px 30px;
+    -webkit-transition: opacity 0s linear .2s;
+    -moz-transition: opacity 0s linear .2s;
+    -o-transition: opacity 0s linear .2s;
+}
+.pokeball3:hover ~ .menuback3 {
+    opacity: 1;
+    -webkit-transition: opacity 0s linear 0s;
+    -moz-transition: opacity 0s linear 0s;
+    -o-transition: opacity 0s linear 0s;
+}
+.menu3 {
+    position: fixed;
+    left: 165px;
+    top: 331px;
+    width: 0px;
+    height: 28px;
+    z-index: +7;
+    background-color: #EDF1FF;
+    border-radius: 15px 0px 0px 80px;
+    -webkit-transition: width .2s linear 0s, left .2s linear 0s;
+    -moz-transition: width .2s linear 0s, left .2s linear 0s;
+    -o-transition: width .2s linear 0s, left .2s linear 0s;
+}
+.pokeball3:hover ~ .menu3 .menutext {
+    opacity: 1;
+    -webkit-transition: opacity .1s linear .5s;
+    -moz-transition: opacity .1s linear .5s;
+    -o-transition: opacity .1s linear .5s;
+}
+.pokeball3:hover ~ .menu3 {
+    left: 50px;
+    width: 115px;
+    -webkit-transition: width 1s linear 0s, left 1s linear 0s;
+    -moz-transition: width 1s linear 0s, left 1s linear 0s;
+    -o-transition: width 1s linear 0s, left 1s linear 0s;
+}
+.back4{
+    position: fixed;
+    left: 150px;
+    top: 377px;
+    width: 33px;
+    height: 36px;
+    z-index: +1;
+    background-color: #14192A;
+    border-radius: 0px 15px 15px 0px;
+}
+.pokeball4 {
+    position: fixed;
+    left: 150px;
+    top: 380px;
+    z-index: +8;
+    transform: rotate(0deg);
+    -webkit-transition: transform .2s linear 0s;
+    -moz-transition: transform .2s linear 0s;
+    -o-transition: transform .2s linear 0s;
+}
+.pokeball4:hover {
+    transform: rotate(360deg);
+    -webkit-transition: transform 1s linear 0s;
+    -moz-transition: transform 1s linear 0s;
+    -o-transition: transform 1s linear 0s;
+}
+.menuback4 {
+    position: fixed;
+    left: 151px;
+    top: 381px;
+    width: 28px;
+    height: 28px;
+    z-index: +6;
+    opacity: 0;
+    background-color: #EDF1FF;
+    border-radius: 30px 30px 30px 30px;
+    -webkit-transition: opacity 0s linear .2s;
+    -moz-transition: opacity 0s linear .2s;
+    -o-transition: opacity 0s linear .2s;
+}
+.pokeball4:hover ~ .menuback4 {
+    opacity: 1;
+    -webkit-transition: opacity 0s linear 0s;
+    -moz-transition: opacity 0s linear 0s;
+    -o-transition: opacity 0s linear 0s;
+}
+.menu4 {
+    position: fixed;
+    left: 165px;
+    top: 381px;
+    width: 0px;
+    height: 28px;
+    z-index: +7;
+    background-color: #EDF1FF;
+    border-radius: 15px 0px 0px 80px;
+    -webkit-transition: width .2s linear 0s, left .2s linear 0s;
+    -moz-transition: width .2s linear 0s, left .2s linear 0s;
+    -o-transition: width .2s linear 0s, left .2s linear 0s;
+}
+.pokeball4:hover ~ .menu4 .menutext {
+    opacity: 1;
+    -webkit-transition: opacity .1s linear .5s;
+    -moz-transition: opacity .1s linear .5s;
+    -o-transition: opacity .1s linear .5s;
+}
+.pokeball4:hover ~ .menu4 {
+    left: 50px;
+    width: 115px;
+    -webkit-transition: width 1s linear 0s, left 1s linear 0s;
+    -moz-transition: width 1s linear 0s, left 1s linear 0s;
+    -o-transition: width 1s linear 0s, left 1s linear 0s;
+}
+.menutext {
+    color: #4B609B;
+    text-align: center;
+    padding: 5px;
+    opacity: 0;
+    -webkit-transition: opacity .1s linear 0s;
+    -moz-transition: opacity .1s linear 0s;
+    -o-transition: opacity .1s linear 0s;
+}
+.pic {
+    position: fixed;
+    width: 30%;
+    right: -30%;
+}
+.trainer {
+
+}
+
+</style>
+</head>
+
+<body class="body">
+<div class="head">
+    <div class="title">sammy0295's stats</div>
+    <div class="side"></div>
+    <div class="backhead"></div>
+    <div class="headpokeball"><img src="file:///D:/Media/Games/ASB/pokeball200.png">
+
+    <div class="back1"></div>
+        <div class="pokeball1"><a href=""><img src="file:///D:/Media/Games/ASB/pokeball30.png"></a></div><div class="menuback1"></div><div class="menu1"><div class="menutext">
+            trainer</div></div>
+    <div class="back2"></div>
+        <div class="pokeball2"><a href=""><img src="file:///D:/Media/Games/ASB/pokeball30.png"></a></div><div class="menuback2"></div><div class="menu2"><div class="menutext">
+            pokemon</div></div>
+    <div class="back3"></div>
+        <div class="pokeball3"><a href=""><img src="file:///D:/Media/Games/ASB/pokeball30.png"></a></div><div class="menuback3"></div><div class="menu3"><div class="menutext">
+            pokedex</div></div>
+    <div class="back4"></div>
+        <div class="pokeball4"><a href=""><img src="file:///D:/Media/Games/ASB/pokeball30.png"></a></div><div class="menuback4"></div><div class="menu4"><div class="menutext">
+            record</div></div>
+</div>
+<div class="pic"><img src="file:///D:/Media/Games/ASB/282GardevoirShiny.png"></div>
+
+<div class="trainer"></div>
+
+</body></html>
